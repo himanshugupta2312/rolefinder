@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f2">
+  <title>Rolefinder — Find your next role</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Rolefinder home"><span class="brand-mark">r.</span> rolefinder</a>
+    <span class="top-note">A calmer way to find your next role</span>
+    <a class="saved-link" href="#saved">Saved jobs <span id="savedCount">0</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="sparkle">✳</span> YOUR NEXT CHAPTER STARTS HERE</p>
+        <h1>Find work that<br>fits <span>your life.</span></h1>
+        <p class="hero-subtitle">Tell us what matters. We’ll bring relevant roles together from independent job boards, all in one place.</p>
+        <div class="source-note"><span class="live-dot"></span> Searches public listings from Remotive, Arbeitnow &amp; Remote OK</div>
+      </div>
+
+      <form id="searchForm" class="search-panel">
+        <div class="panel-heading">
+          <div><span class="step-label">01 / YOUR SEARCH</span><h2>What are you looking for?</h2></div>
+          <span class="panel-icon">↗</span>
+        </div>
+        <label for="role">Job title or role <span class="required">*</span></label>
+        <input id="role" name="role" type="text" placeholder="e.g. Product designer, Data analyst" required maxlength="160">
+        <div class="field-row">
+          <div class="field">
+            <label for="location">Location</label>
+            <input id="location" name="location" type="text" placeholder="City, region or country">
+          </div>
+          <div class="field">
+            <label for="keywords">Skills or keywords</label>
+            <input id="keywords" name="keywords" type="text" placeholder="e.g. Figma, SQL, healthcare">
+          </div>
+        </div>
+        <label class="remote-toggle"><input id="remoteOnly" type="checkbox"><span class="toggle-track"></span><span>Only show remote-friendly roles</span></label>
+        <button class="search-button" type="submit"><span>Find my matches</span><span class="button-arrow">→</span></button>
+        <p class="privacy-note">No account needed. Your search stays in this browser.</p>
+      </form>
+    </section>
+
+    <section id="resultsSection" class="results-section" aria-live="polite">
+      <div class="results-heading">
+        <div><p class="eyebrow">MADE FOR YOU</p><h2 id="resultsTitle">Your search starts here</h2></div>
+        <div id="sortWrap" class="sort-wrap hidden"><label for="sortSelect">Sort by</label><select id="sortSelect"><option value="match">Best match</option><option value="newest">Newest</option></select></div>
+      </div>
+      <div id="quickSearches" class="quick-searches">
+        <span>Popular searches</span>
+        <button type="button" data-role="Product manager">Product manager</button>
+        <button type="button" data-role="UX designer">UX designer</button>
+        <button type="button" data-role="Software engineer">Software engineer</button>
+        <button type="button" data-role="Marketing">Marketing</button>
+      </div>
+      <div id="searchLinks" class="search-links hidden"></div>
+      <div id="warningList" class="warning-list"></div>
+      <div id="resultsList" class="results-list"></div>
+    </section>
+
+    <section id="saved" class="saved-section">
+      <div class="results-heading">
+        <div><p class="eyebrow">KEEP THE GOOD ONES</p><h2>Saved for later <span id="savedHeadingCount" class="count-badge">0</span></h2></div>
+        <p class="saved-caption">Saved jobs stay right here in your browser.</p>
+      </div>
+      <div id="savedList" class="results-list saved-list"></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="/"><span class="brand-mark">r.</span> rolefinder</a><p>Good things are out there. Go find them.</p><span>Public listings · No sign-in required</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>

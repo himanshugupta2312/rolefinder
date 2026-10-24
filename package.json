@@ -1,0 +1,12 @@
+{
+  "name": "job-finder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A standalone job search and match tool",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
